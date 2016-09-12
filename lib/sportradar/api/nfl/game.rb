@@ -51,7 +51,7 @@ module Sportradar
         quarters&.flat_map(&:drives)
       end
       def plays
-        drives&.flat_map(&:plays)
+        drives&.flat_map(&:plays) unless drives.compact.empty?
       end
 
       private
