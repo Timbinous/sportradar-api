@@ -16,7 +16,6 @@ module Sportradar
 
       def get(path, options={})
         base_setup(path, options)
-        puts url
         response = self.class.get(url, headers: headers, query: options.merge(api_key), timeout: timeout)
         rescue Net::ReadTimeout, Net::OpenTimeout
           raise Sportradar::Api::Error::Timeout
